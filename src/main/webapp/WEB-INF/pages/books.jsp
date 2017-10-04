@@ -48,17 +48,7 @@
         <p>No books found</p>
         <br />
     </c:if>
-    <%--<c:if test="${!empty listBooks}">--%>
-        <%--<form action="<c:url value="/books/search"/>" method="POST">--%>
-            <%--<label for="title">Title:</label>--%>
-            <%--<input type="text" id="id" name="title" placeholder="title"/>--%>
-            <%--<input type="submit" title="search" id="1" value="Search"/>--%>
-        <%--<c:if test="${!empty search.searchString}">--%>
-            <%--<a href="<c:url value="/books/search/"/>">--%>
-                <%--<input type="button" title="clear" id="2" value="Clear filter"/></a>--%>
-        <%--</c:if>--%>
-        <%--</form>--%>
-    <%--</c:if>--%>
+	
     <c:if test="${!empty listBooks}">
         <form action="<c:url value="/books/search"/>" method="post">
             <label for="title">Title:</label>
