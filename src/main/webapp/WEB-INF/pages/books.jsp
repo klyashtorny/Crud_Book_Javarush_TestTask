@@ -48,12 +48,24 @@
         <p>No books found</p>
         <br />
     </c:if>
+    <%--<c:if test="${!empty listBooks}">--%>
+        <%--<form action="<c:url value="/books/search"/>" method="POST">--%>
+            <%--<label for="title">Title:</label>--%>
+            <%--<input type="text" id="id" name="title" placeholder="title"/>--%>
+            <%--<input type="submit" title="search" id="1" value="Search"/>--%>
+        <%--<c:if test="${!empty search.searchString}">--%>
+            <%--<a href="<c:url value="/books/search/"/>">--%>
+                <%--<input type="button" title="clear" id="2" value="Clear filter"/></a>--%>
+        <%--</c:if>--%>
+        <%--</form>--%>
+    <%--</c:if>--%>
     <c:if test="${!empty listBooks}">
         <form action="<c:url value="/books/search"/>" method="post">
-            <input type="text" title="searchString" value="${search.searchString}" />
-            <input type="submit" title="search" id="1" value="Search" />
+            <label for="title">Title:</label>
+            <input type="text" name="searchString" value="${search.searchString}" placeholder="title"/>
+            <input type="submit" name="search" id="1" value="Search" />
             <c:if test="${!empty search.searchString}">
-                <a href="<c:url value="/books/1"/>"><input type="button" title="clear" id="2" value="Clear filter" /></a>
+                <a href="<c:url value="/books/1"/>"><input type="button" name="clear" id="2" value="Clear filter" /></a>
             </c:if>
         </form>
     </c:if>
@@ -71,7 +83,6 @@
                 <th>isbn</th>
                 <th>printYear</th>
                 <th>readAlready</th>
-
                 <th colspan="2"></th>
             </tr>
             <c:forEach items="${listBooks}" var="books">
